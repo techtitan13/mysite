@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #000;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+    .project-details {
+      text-align: left;
+    }
+    .project-image {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 30px;
+      color: #000;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html#portfolio" class="back-link">← Back to Portfolio</a>
+    <div id="project" class="project-details"></div>
+  </div>
+
+  <script>
+    // Get query param
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get("id");
+
+    // Project data (you can expand this easily)
+    const projects = {
+      "tune-trail": {
+        title: "Tune Trail",
+        date: "DEC 2025",
+        image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80",
+        description: "Mobile music player app created during the Uxrush UX/UI course. Main feature: AI-powered music recommendations."
+      },
+      "venerby": {
+        title: "Venerby",
+        date: "DEC 2024",
+        image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80",
+        description: "Luxury online jewelry store built in Lokens studio. Highlights quality products and custom jewelry ordering."
+      },
+      "fotokh": {
+        title: "Fotokh",
+        date: "DEC 2023",
+        image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80",
+        description: "Men’s apparel e-commerce. Designed in Figma and developed in Tilda CMS."
+      },
+      "robozonove": {
+        title: "Robozonove Design Buro",
+        date: "SEP 2023",
+        image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&q=80",
+        description: "Portfolio website for an interior design studio specializing in premium-class projects with elegant aesthetics."
+      }
+    };
+
+    // Insert project content dynamically
+    const project = projects[projectId];
+    const container = document.getElementById("project");
+
+    if (project) {
+      container.innerHTML = `
+        <h1>${project.title}</h1>
+        <p><strong>${project.date}</strong></p>
+        <img src="${project.image}" alt="${project.title}" class="project-image">
+        <p>${project.description}</p>
+      `;
+    } else {
+      container.innerHTML = "<h2>Project not found</h2>";
+    }
+  </script>
+</body>
+</html>

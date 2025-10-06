@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khalid - UX/UI Designer</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-text">LOADING</div>
+        <div class="loading-bar">
+            <div class="loading-bar-fill" id="loadingBarFill"></div>
+        </div>
+        <div class="preloader-percentage" id="preloaderPercentage">0%</div>
+    </div>
+
+    <div class="logo">K.</div>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#experience">Work experience</a></li>
+            <li><a href="#concepts">Design concepts</a></li>
+            <li><a href="#contact">Contacts</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-images-container"></div>
+        <div class="container">
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <h1>I am Sofia,<br>ux/ui designer</h1>
+                    <p>I create visually appealing and</p>
+                    <p>intuitive interfaces, focusing</p>
+                    <p>on usability and clear user flows</p>
+                </div>
+                <div class="hero-right">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80" alt="Khalid">
+                    </div>
+                    <a href="#contact" class="cta-button"><span>Get in touch</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="container">
+            <div class="mission-content">
+                <svg class="heart-icon" viewBox="0 0 24 24" fill="none" stroke="#005cd3" stroke-width="2">
+                <path d="M9 2H5v2H3v2H1v6h2v2h2v2h2v2h2v2h2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2V6h-2V4h-2V2h-4v2h-2v2h-2V4H9V2zm0 2v2h2v2h2V6h2V4h4v2h2v6h-2v2h-2v2h-2v2h-2v2h-2v-2H9v-2H7v-2H5v-2H3V6h2V4h4z"></path>
+                </svg>
+                <p class="mission-text">I strive to work on products that help real people and make their lives a little easier.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="portfolio-header">
+            <h2>Portfolio</h2>
+        </div>
+
+        <div class="portfolio-grid">
+            <!-- Tune Trail Project -->
+            <div class="project">
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80" alt="Tune Trail">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3 class="project-title">Tune Trail</h3>
+                             <a href="portfolio.html?id=tune-trail" class="see-more">See more</a>
+                        </div>
+                        <p class="project-description">Mobile music player app. The project was created during the Uxrush UX/UI design course. The app's main feature is AI-powered music recommendations.</p>
+                        <p class="project-meta">DEC 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Venerby Project -->
+            <div class="project">
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80" alt="Venerby">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3 class="project-title">Venerby</h3>
+                             <a href="portfolio.html?id=tune-trail" class="see-more">See more</a>
+                        </div>
+                        <p class="project-description">Online store for lux and high jewelry. Created as part of my work in Lokens studio. Highlighting quality products and custom jewelry ordering.</p>
+                        <p class="project-meta">DEC 2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fotokh Project -->
+            <div class="project">
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" alt="Fotokh">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3 class="project-title">Fotokh</h3>
+                            <a href="portfolio.html?id=tune-trail" class="see-more">See more</a>
+                        </div>
+                        <p class="project-description">Online store of men's apparel. Developed website structure, designed pages in Figma, and built the site in Tilda CMS platform.</p>
+                        <p class="project-meta">DEC 2023</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Robozonove Design Buro Project -->
+            <div class="project">
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&q=80" alt="Robozonove Design Buro">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h3 class="project-title">Robozonove Design Buro</h3>
+                             <a href="portfolio.html?id=tune-trail" class="see-more">See more</a>
+                        </div>
+                        <p class="project-description">Multi-page portfolio website for an interior design studio specializing in premium-class projects with elegant aesthetics.</p>
+                        <p class="project-meta">SEP 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience" class="work-experience">
+        <div class="work-experience-header">
+            <h2>Work experience</h2>
+        </div>
+
+        <div class="experience-list">
+            <div class="experience-item">
+                <div class="experience-date">
+                    JUNE 2023 -<br>JULY 2024
+                </div>
+                <div class="experience-title">
+                    Web designer in Estemo<br>design studio
+                </div>
+                <div class="experience-details">
+                    <p>- Designed and developed user-friendly websites using CMS platforms.</p>
+                    <p>- Conducted client interviews to identify business goals and target audience needs, covering them in design solutions.</p>
+                    <p>- Created and maintained design templates in Figma to structure the studio's daily workflow and optimize routine tasks.</p>
+                    <p>- Collaborated with graphic designers to ensure consistent brand identity for clients.</p>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-date">
+                    JULY 2024 -<br>PRESENT
+                </div>
+                <div class="experience-title">
+                    Freelance web designer
+                </div>
+                <div class="experience-details">
+                    <p>- Design and develop user-friendly websites using CMS platforms.</p>
+                    <p>- Work on user flows and wireframes based on client interviews and competitive analysis.</p>
+                    <p>- Create desktop and adaptive designs in Figma.</p>
+                    <p>- Implement custom code (CSS, JS) to provide consistent user experience and achieve the project goals.</p>
+                    <p>- Use additional tools like Midjourney and Photoshop to produce visual content for specific tasks.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="download-cv">
+            <svg class="experience-icon" viewBox="0 0 24 24" fill="none" stroke="#005cd3">
+                <path d="M3 22h18V8h-2V6h-2v2h-2V6h2V4h-2V2H3v20zm2-2V4h8v6h6v10H5z"/>
+            </svg>
+            <a href="#" download><span>Download CV in PDF</span></a>
+        </div>
+    </section>
+
+    <!-- Design Concepts Section -->
+    <section id="concepts" class="design-concepts">
+        <div class="design-concepts-header">
+            <h2>More of my design concepts</h2>
+        </div>
+        <p class="design-concepts-subtitle">[Click a folder to explore]</p>
+
+        <div class="folders-container">
+            <div class="folder-item" data-folder="1">
+                <div class="folder-icon">
+                    <svg viewBox="0 0 64 64" fill="#ddd" stroke="#000" stroke-width="2">
+                        <path d="M4 12h24l4 6h28v38H4z"/>
+                    </svg>
+                </div>
+                <div class="folder-name">FLD:01</div>
+            </div>
+
+            <div class="folder-item" data-folder="2">
+                <div class="folder-icon">
+                    <svg viewBox="0 0 64 64" fill="#ddd" stroke="#000" stroke-width="2">
+                        <path d="M4 12h24l4 6h28v38H4z"/>
+                    </svg>
+                </div>
+                <div class="folder-name">FLD:02</div>
+            </div>
+
+            <div class="folder-item" data-folder="3">
+                <div class="folder-icon">
+                    <svg viewBox="0 0 64 64" fill="#ddd" stroke="#000" stroke-width="2">
+                        <path d="M4 12h24l4 6h28v38H4z"/>
+                    </svg>
+                </div>
+                <div class="folder-name">FLD:03</div>
+            </div>
+
+            <div class="folder-item" data-folder="4">
+                <div class="folder-icon">
+                    <svg viewBox="0 0 64 64" fill="#ddd" stroke="#000" stroke-width="2">
+                        <path d="M4 12h24l4 6h28v38H4z"/>
+                    </svg>
+                </div>
+                <div class="folder-name">FLD:04</div>
+            </div>
+        </div>
+
+        <div class="concepts-gallery" id="conceptsGallery">
+            <div class="concept-image">
+                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="Design Concept 1">
+            </div>
+            <div class="concept-image">
+                <img src="https://images.unsplash.com/photo-1545235617-7a424c1a60cc?w=600&q=80" alt="Design Concept 2">
+            </div>
+            <div class="concept-image">
+                <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=600&q=80" alt="Design Concept 3">
+            </div>
+            <div class="concept-image">
+                <img src="https://images.unsplash.com/photo-1586717799252-bd134ad00e26?w=600&q=80" alt="Design Concept 4">
+            </div>
+            <div class="concept-image">
+                <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=600&q=80" alt="Design Concept 5">
+            </div>
+            <div class="concept-image">
+                <img src="https://images.unsplash.com/photo-1600096194534-95cf5ece04cf?w=600&q=80" alt="Design Concept 6">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts Section -->
+    <section id="contact" class="contacts-section">
+        <div class="contacts-header">
+            <h2>Contact me</h2>
+        </div>
+
+        <div class="contacts-content">
+            <div class="contact-icons">
+                <a href="mailto:khalidbdcalling@gmail.com" class="contact-icon-card">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    <span class="icon-label">Email</span>
+                </a>
+
+                <a href="https://linkedin.com" target="_blank" class="contact-icon-card">
+                    <svg width="800px" height="800px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M3 1a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V3a2 2 0 00-2-2H3zm1.102 4.297a1.195 1.195 0 100-2.39 1.195 1.195 0 000 2.39zm1 7.516V6.234h-2v6.579h2zM6.43 6.234h2v.881c.295-.462.943-1.084 2.148-1.084 1.438 0 2.219.953 2.219 2.766 0 .087.008.484.008.484v3.531h-2v-3.53c0-.485-.102-1.438-1.18-1.438-1.079 0-1.17 1.198-1.195 1.982v2.986h-2V6.234z" fill="#000000"/>
+</svg>
+                    <span class="icon-label">LinkedIn</span>
+                </a>
+
+                <a href="https://wa.me/" target="_blank" class="contact-icon-card">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    <span class="icon-label">WhatsApp</span>
+                </a>
+
+                <a href="https://behance.net" target="_blank" class="contact-icon-card">
+                    <svg fill="#000000" width="800px" height="800px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"><path d="M20.9,2H3.1A1.1,1.1,0,0,0,2,3.1V20.9A1.1,1.1,0,0,0,3.1,22h9.58V14.25h-2.6v-3h2.6V9a3.64,3.64,0,0,1,3.88-4,20.26,20.26,0,0,1,2.33.12v2.7H17.3c-1.26,0-1.5.6-1.5,1.47v1.93h3l-.39,3H15.8V22h5.1A1.1,1.1,0,0,0,22,20.9V3.1A1.1,1.1,0,0,0,20.9,2Z"/></svg>
+                    <span class="icon-label">Behance</span>
+                </a>
+
+                <a href="https://telegram.org" target="_blank" class="contact-icon-card">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    </svg>
+                    <span class="icon-label">Telegram</span>
+                </a>
+            </div>
+
+            <div class="contact-message">
+                <p>I'm looking forward to chat with you, discuss my approach to design challenges, team collaboration, and see if we have similar values and expectations.</p>
+                <div class="contact-signature">
+                    <p>Warm regards,</p>
+                    <p>Khalid.</p>
+                </div>
+            </div>
+
+            <p class="location-footer">location: Dhaka, BD</p>
+        </div>
+    </section>
+
+    <!-- Footer with Large Name -->
+    <footer class="name-background">
+        <div class="name-background-text">Aal Khalid</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
