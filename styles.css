@@ -1241,7 +1241,46 @@ body {
 }
 
 
+/* Animation performance optimizations */
+.hero-content h1,
+.hero-content p,
+.hero-image,
+.portfolio-header,
+.project-card,
+.work-experience-header,
+.experience-item,
+.download-cv,
+.design-concepts-header,
+.design-concepts-subtitle,
+.folder-item,
+.contacts-header,
+.contact-icon-card,
+.contact-message,
+.location-footer,
+.name-background-text {
+    will-change: transform, opacity;
+}
 
+/* Ensure elements are initially hidden for scroll animations */
+.portfolio-header,
+.project-card,
+.work-experience-header,
+.experience-item,
+.download-cv,
+.design-concepts-header,
+.design-concepts-subtitle,
+.folder-item,
+.contacts-header,
+.contact-icon-card,
+.contact-message,
+.location-footer {
+    opacity: 0;
+}
+
+/* Name background specific */
+.name-background-text {
+    opacity: 0;
+}
 
 
 

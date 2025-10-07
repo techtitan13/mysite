@@ -525,3 +525,274 @@ themeToggle.addEventListener('click', toggleTheme);
 //         initializeTheme();
 //     }
 // });
+
+
+// Enhanced Scroll Animations for All Sections
+function initScrollAnimations() {
+    // Hero section animations (already exists, but ensuring they're included)
+    const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    
+    heroTimeline
+        .to('.hero-content h1', {
+            opacity: 1,
+            y: 0,
+            duration: 1
+        })
+        .to('.hero-content p', {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.1
+        }, '-=0.6')
+        .to('.hero-image', {
+            opacity: 1,
+            scale: 1,
+            duration: 1.2
+        }, '-=0.8');
+
+    // Mission section animation (already exists)
+    gsap.to('.heart-icon', {
+        scrollTrigger: {
+            trigger: '.mission',
+            start: 'top center',
+            toggleActions: 'play none none reverse'
+        },
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        ease: 'back.out(1.7)'
+    });
+
+    gsap.to('.mission-text', {
+        scrollTrigger: {
+            trigger: '.mission',
+            start: 'top center',
+            toggleActions: 'play none none reverse'
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.3
+    });
+
+    // Portfolio section animations
+    gsap.to('.portfolio-header', {
+        scrollTrigger: {
+            trigger: '.portfolio-section',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power2.out'
+    });
+
+    // Animate each project card with stagger
+    gsap.utils.toArray('.project-card').forEach((card, index) => {
+        gsap.fromTo(card, {
+            opacity: 0,
+            y: 60,
+            scale: 0.9
+        }, {
+            scrollTrigger: {
+                trigger: card,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.8,
+            delay: index * 0.1,
+            ease: 'power2.out'
+        });
+    });
+
+    // Work Experience section animations
+    gsap.to('.work-experience-header', {
+        scrollTrigger: {
+            trigger: '.work-experience',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power2.out'
+    });
+
+    // Animate experience items with stagger
+    gsap.utils.toArray('.experience-item').forEach((item, index) => {
+        gsap.fromTo(item, {
+            opacity: 0,
+            x: -50
+        }, {
+            scrollTrigger: {
+                trigger: item,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 1,
+            x: 0,
+            duration: 0.8,
+            delay: index * 0.2,
+            ease: 'power2.out'
+        });
+    });
+
+    // Download CV section animation
+    gsap.fromTo('.download-cv', {
+        opacity: 0,
+        scale: 0.8
+    }, {
+        scrollTrigger: {
+            trigger: '.download-cv',
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+        },
+        opacity: 1,
+        scale: 1,
+        duration: 0.8,
+        ease: 'back.out(1.7)'
+    });
+
+    // Design Concepts section animations
+    gsap.to('.design-concepts-header', {
+        scrollTrigger: {
+            trigger: '.design-concepts',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power2.out'
+    });
+
+    gsap.to('.design-concepts-subtitle', {
+        scrollTrigger: {
+            trigger: '.design-concepts',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+        },
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        delay: 0.2,
+        ease: 'power2.out'
+    });
+
+    // Animate folder items
+    gsap.utils.toArray('.folder-item').forEach((folder, index) => {
+        gsap.fromTo(folder, {
+            opacity: 0,
+            y: 30,
+            scale: 0.8
+        }, {
+            scrollTrigger: {
+                trigger: '.folders-container',
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.6,
+            delay: index * 0.1,
+            ease: 'back.out(1.7)'
+        });
+    });
+
+    // Contacts section animations
+    gsap.to('.contacts-header', {
+        scrollTrigger: {
+            trigger: '.contacts-section',
+            start: 'top 80%',
+            toggleActions: 'play none none reverse'
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power2.out'
+    });
+
+    // Animate contact icons with stagger
+    gsap.utils.toArray('.contact-icon-card').forEach((icon, index) => {
+        gsap.fromTo(icon, {
+            opacity: 0,
+            y: 40,
+            rotationY: 90
+        }, {
+            scrollTrigger: {
+                trigger: '.contact-icons',
+                start: 'top 85%',
+                toggleActions: 'play none none reverse'
+            },
+            opacity: 1,
+            y: 0,
+            rotationY: 0,
+            duration: 0.8,
+            delay: index * 0.1,
+            ease: 'back.out(1.7)'
+        });
+    });
+
+    // Contact message animation
+    gsap.fromTo('.contact-message', {
+        opacity: 0,
+        x: 100
+    }, {
+        scrollTrigger: {
+            trigger: '.contact-message',
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+        },
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: 'power2.out'
+    });
+
+    // Location footer animation
+    gsap.fromTo('.location-footer', {
+        opacity: 0,
+        y: 30
+    }, {
+        scrollTrigger: {
+            trigger: '.location-footer',
+            start: 'top 90%',
+            toggleActions: 'play none none reverse'
+        },
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power2.out'
+    });
+
+    // Name background animation
+    gsap.fromTo('.name-background-text', {
+        opacity: 0,
+        scale: 0.8
+    }, {
+        scrollTrigger: {
+            trigger: '.name-background',
+            start: 'top 90%',
+            toggleActions: 'play none none reverse'
+        },
+        opacity: 1,
+        scale: 1,
+        duration: 1.2,
+        ease: 'power2.out'
+    });
+}
+
+// Initialize scroll animations when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    initScrollAnimations();
+});
+
+// Re-initialize animations when theme changes (if needed)
+function refreshAnimations() {
+    ScrollTrigger.refresh();
+}
