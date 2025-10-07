@@ -470,24 +470,29 @@ mobileNavOverlay.addEventListener('click', (e) => {
 });
 
 
-// Dark Mode Functionality
+// Dark Mode Functionality - Default to Light Mode
 const themeToggle = document.getElementById('themeToggle');
 const sunIcon = themeToggle.querySelector('.sun-icon');
 const moonIcon = themeToggle.querySelector('.moon-icon');
 
-// Check for saved theme preference or respect OS preference
+// Initialize theme with light mode as default
 function initializeTheme() {
     const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    // Default to light mode unless user explicitly chose dark
+    if (savedTheme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'dark');
         sunIcon.style.display = 'block';
         moonIcon.style.display = 'none';
     } else {
+        // Set light mode as default
         document.documentElement.setAttribute('data-theme', 'light');
         sunIcon.style.display = 'none';
         moonIcon.style.display = 'block';
+        // Ensure light mode is saved if not already set
+        if (!savedTheme) {
+            localStorage.setItem('theme', 'light');
+        }
     }
 }
 
@@ -514,9 +519,9 @@ initializeTheme();
 // Add event listener to theme toggle
 themeToggle.addEventListener('click', toggleTheme);
 
-// Listen for system theme changes
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (!localStorage.getItem('theme')) { // Only auto-switch if no manual preference
-        initializeTheme();
-    }
-});
+// Listen for system theme changes (optional - comment out if you don't want this)
+// window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+//     if (!localStorage.getItem('theme')) { // Only auto-switch if no manual preference
+//         initializeTheme();
+//     }
+// });
