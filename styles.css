@@ -916,6 +916,339 @@
     color: #005cd3;
 }
 
+/* Dark Mode Variables */
+:root {
+  --bg-color: #fff;
+  --text-color: #000;
+  --secondary-bg: #fafafa;
+  --card-bg: #f5f5f5;
+  --accent-color: #005cd3;
+  --hover-color: #333;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --secondary-bg: #1e1e1e;
+  --card-bg: #2d2d2d;
+  --accent-color: #4dabf7;
+  --hover-color: #bbbbbb;
+  --nav-bg: rgba(18, 18, 18, 0.95);
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Apply theme variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Toggle */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 2px solid var(--text-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  background: var(--accent-color);
+}
+
+.theme-toggle svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--text-color);
+  transition: fill 0.3s ease;
+}
+
+.theme-toggle:hover svg {
+  fill: white;
+}
+
+/* Dark mode specific adjustments */
+[data-theme="dark"] .preloader {
+  background: #1a1a1a;
+}
+
+[data-theme="dark"] .logo {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .nav a {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .hero-image img {
+  filter: grayscale(100%) brightness(0.8);
+}
+
+[data-theme="dark"] .project-card {
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] .project-image-wrapper {
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] .work-experience {
+  background: var(--secondary-bg);
+}
+
+[data-theme="dark"] .contact-icon-card {
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] .contact-icon-card::before {
+  background: #2d7a9c;
+}
+
+[data-theme="dark"] .name-background-text {
+  color: rgba(100, 100, 130, 0.3);
+}
+
+[data-theme="dark"] .heart-icon path {
+  stroke: var(--accent-color);
+}
+
+[data-theme="dark"] .experience-icon path {
+  stroke: var(--accent-color);
+}
+
+[data-theme="dark"] .folder-icon svg {
+  fill: var(--card-bg);
+  stroke: var(--text-color);
+}
+
+[data-theme="dark"] .folder-item.active .folder-icon svg {
+  fill: var(--accent-color);
+}
+
+[data-theme="dark"] .concept-image {
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] .mobile-nav-overlay {
+  background-color: rgba(18, 18, 18, 0.98);
+}
+
+[data-theme="dark"] .mobile-nav a {
+  color: var(--text-color);
+}
+
+[data-theme="dark"] .hamburger-line {
+  background-color: var(--text-color);
+}
+
+/* Button styles for dark mode */
+[data-theme="dark"] .cta-button,
+[data-theme="dark"] .download-cv a {
+  background: var(--accent-color);
+  color: white;
+}
+
+[data-theme="dark"] .cta-button:hover,
+[data-theme="dark"] .download-cv a:hover {
+  background: #3a8fd4;
+}
+
+/* Contact icons in dark mode */
+[data-theme="dark"] .contact-icon-card svg {
+  fill: var(--text-color);
+}
+
+[data-theme="dark"] .contact-icon-card:hover svg {
+  fill: #000;
+}
+
+/* Adjust hamburger menu position when theme toggle is present */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    right: 80px; /* Make space for theme toggle */
+  }
+}
+
+@media (max-width: 480px) {
+  .hamburger-menu {
+    right: 70px;
+  }
+  
+  .theme-toggle {
+    width: 45px;
+    height: 45px;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+
+/* Dark Mode Text Color Fixes */
+[data-theme="dark"] .portfolio-header h2,
+[data-theme="dark"] .project-title,
+[data-theme="dark"] .project-description,
+[data-theme="dark"] .project-meta,
+[data-theme="dark"] .see-more {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .work-experience-header h2,
+[data-theme="dark"] .experience-date,
+[data-theme="dark"] .experience-title,
+[data-theme="dark"] .experience-details,
+[data-theme="dark"] .experience-details p {
+    color: #ffffff !important;
+}
+
+/* Additional text elements that might need white color */
+[data-theme="dark"] .design-concepts-header h2,
+[data-theme="dark"] .design-concepts-subtitle,
+[data-theme="dark"] .folder-name,
+[data-theme="dark"] .contacts-header h2,
+[data-theme="dark"] .contact-message,
+[data-theme="dark"] .contact-signature,
+[data-theme="dark"] .location-footer {
+    color: #ffffff !important;
+}
+
+/* Ensure see-more links have proper contrast in dark mode */
+[data-theme="dark"] .see-more {
+    opacity: 0.8;
+}
+
+[data-theme="dark"] .see-more:hover {
+    opacity: 1;
+    color: var(--accent-color) !important;
+}
+
+/* Fix for any other text that might be hard to read */
+[data-theme="dark"] .mission-text,
+[data-theme="dark"] .hero-content h1,
+[data-theme="dark"] .hero-content p {
+    color: #ffffff !important;
+}
+
+/* Dark Mode - Design Concepts Section */
+[data-theme="dark"] .design-concepts {
+    background: var(--secondary-bg);
+}
+
+[data-theme="dark"] .folders-container {
+    background: transparent;
+}
+
+[data-theme="dark"] .folder-item {
+    background: transparent;
+}
+
+[data-theme="dark"] .folder-icon svg {
+    fill: var(--card-bg);
+    stroke: var(--text-color);
+}
+
+[data-theme="dark"] .folder-item.active .folder-icon svg {
+    fill: var(--accent-color);
+    stroke: var(--accent-color);
+}
+
+[data-theme="dark"] .folder-name {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .concepts-gallery {
+    background: transparent;
+}
+
+[data-theme="dark"] .concept-image {
+    background: var(--card-bg);
+    border: 1px solid #3a3a3a;
+}
+
+/* Dark Mode - Footer Section */
+[data-theme="dark"] .contacts-section {
+    background: var(--bg-color);
+}
+
+[data-theme="dark"] .contact-icons {
+    background: transparent;
+}
+
+[data-theme="dark"] .contact-icon-card {
+    background: var(--card-bg);
+    border: 1px solid #3a3a3a;
+}
+
+[data-theme="dark"] .contact-icon-card::before {
+    background: #2d7a9c;
+}
+
+[data-theme="dark"] .contact-message {
+    background: transparent;
+}
+
+[data-theme="dark"] .contact-signature {
+    background: transparent;
+}
+
+[data-theme="dark"] .location-footer {
+    background: transparent;
+}
+
+/* Dark Mode - Name Background Footer */
+[data-theme="dark"] .name-background {
+    background: var(--bg-color);
+}
+
+[data-theme="dark"] .name-background-text {
+    color: rgba(80, 80, 100, 0.3);
+}
+
+/* Ensure all text in these sections is properly colored */
+[data-theme="dark"] .design-concepts-header h2,
+[data-theme="dark"] .design-concepts-subtitle,
+[data-theme="dark"] .contacts-header h2,
+[data-theme="dark"] .contact-message,
+[data-theme="dark"] .contact-signature,
+[data-theme="dark"] .location-footer,
+[data-theme="dark"] .icon-label {
+    color: var(--text-color) !important;
+}
+
+/* Fix contact icon colors in dark mode */
+[data-theme="dark"] .contact-icon-card svg {
+    fill: var(--text-color);
+}
+
+[data-theme="dark"] .contact-icon-card:hover svg {
+    fill: #000000;
+}
+
+[data-theme="dark"] .contact-icon-card:hover .icon-label {
+    color: #000000 !important;
+}
+
+
+
+
+
+
+
+
+
+
 /* Media Query for Mobile */
 @media (max-width: 768px) {
     .hamburger-menu {

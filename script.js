@@ -438,7 +438,7 @@
                 });
             });
         });
-        
+
         // Hamburger Menu Functionality
 const hamburgerMenu = document.getElementById('hamburgerMenu');
 const mobileNavOverlay = document.getElementById('mobileNavOverlay');
@@ -466,5 +466,57 @@ mobileNavOverlay.addEventListener('click', (e) => {
         hamburgerMenu.classList.remove('active');
         mobileNavOverlay.classList.remove('active');
         document.body.style.overflow = 'auto';
+    }
+});
+
+
+// Dark Mode Functionality
+const themeToggle = document.getElementById('themeToggle');
+const sunIcon = themeToggle.querySelector('.sun-icon');
+const moonIcon = themeToggle.querySelector('.moon-icon');
+
+// Check for saved theme preference or respect OS preference
+function initializeTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+    }
+}
+
+// Toggle theme function
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    
+    if (currentTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+    }
+}
+
+// Initialize theme on page load
+initializeTheme();
+
+// Add event listener to theme toggle
+themeToggle.addEventListener('click', toggleTheme);
+
+// Listen for system theme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) { // Only auto-switch if no manual preference
+        initializeTheme();
     }
 });
